@@ -29,8 +29,12 @@ The server exposes two routes:
 
    ```bash
    export LIBRIME_PATH=/path/to/libRimeCore.so
-   uvicorn api_server.main:app --reload --host 0.0.0.0 --port 9000
+   python -m api_server
    ```
+
+   By default the service listens on `0.0.0.0:8000`.  Override the host or port
+   with the `API_HOST` and `API_PORT` environment variables when you need to
+   expose a different interface, e.g. `API_PORT=9000 python -m api_server`.
 
    The server automatically points librime to the repository root for shared
    data.  To customise directories or the schema ID, the following environment
